@@ -2,10 +2,11 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import Svg, {Path} from 'react-native-svg';
 import {colors} from '../constants';
 import Account from '../screens/Account/index';
-import Booking from '../screens/Booking/index';
 import Notification from '../screens/Notification/index';
+import BookingTabs from './BookingTabs';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +17,7 @@ const BottomTab = () => {
         showLabel: false,
       }}>
       <Tab.Screen
-        name="Booking"
+        name="BookingTabs"
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (
@@ -35,7 +36,7 @@ const BottomTab = () => {
             </View>
           ),
         }}
-        component={Booking}
+        component={BookingTabs}
       />
       <Tab.Screen
         name="Notification"

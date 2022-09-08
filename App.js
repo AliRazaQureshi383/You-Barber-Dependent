@@ -8,14 +8,15 @@ import { PersistGate } from 'redux-persist/integration/react';
 import  {store} from './src/redux/store/store';
 import {persistor} from  "./src/redux/store/store";
 import Home from './src/screens/Home/index'
+import CustomText from './src/components/CustomText'
 
 
 
 const Temp = () => {
   const value = useSelector((state)=> state);
+  // console.log('value ', value ) 
  
- 
-  return  (value?.email  && value?.password)  ?   <Home /> : <SignIn />
+  return  (value?.loginReducer.email  && value?.loginReducer.password)  ?   <Home /> : <SignIn />
  
   
  };
@@ -25,8 +26,9 @@ const App = () => {
   return  (
     <View style={{flex: 1}}>
     <Provider store={store}>
-      <PersistGate loading={<Text>Loading ...</Text>}  persistor={persistor}>
+      <PersistGate loading={<CustomText>Loading ...</CustomText>}  persistor={persistor}>
       <Temp />
+    
       </PersistGate>
     </Provider>
   </View>

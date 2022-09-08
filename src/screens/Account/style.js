@@ -38,9 +38,9 @@ export const styles = {
   },
   loginGreenView: {
     backgroundColor: colors.parrot,
-    height: hp(7),
-    width: hp(7),
-    padding: 15,
+    height: wp(10),
+    width: wp(10),
+    padding: 10,
     borderRadius: wp(50),
     marginLeft: wp(5),
     alignSelf: 'center',
@@ -49,11 +49,12 @@ export const styles = {
   loginImage: {
     alignSelf: 'center',
   },
+  center:{alignSelf :'center'},
 
   loginBtn: {
     width: wp(90),
     borderRadius: wp(50),
-    height: hp(10),
+    height: wp(15),
     backgroundColor: colors.white,
     flexDirection: 'row',
     alignSelf: 'center',

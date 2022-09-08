@@ -1,8 +1,11 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
-import {logout} from '../../redux/actions/action';
-import {styles} from './style';
+import { Image, TouchableOpacity, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import LogoutBtn from '../../assets/icons/logout.svg';
+import LogoutNext from '../../assets/icons/logoutNxt.svg';
+import CustomText from '../../components/CustomText';
+import { logout } from '../../redux/reducer/reducer';
+import { styles } from './style';
 
 const Index = () => {
   const test = useSelector(state => state);
@@ -16,8 +19,8 @@ const Index = () => {
         <Image
           source={require('../../assets/images/male.png')}
           style={styles.userImg}></Image>
-        <Text style={styles.name}>Jack Reacher </Text>
-        <Text style={styles.email}>{test.email}</Text>
+        <CustomText style={styles.name}>Jack Reacher </CustomText>
+        <CustomText style={styles.email}>{test.loginReducer.email}</CustomText>
       </View>
 
       <View style={styles.viewContainer2}>
@@ -25,17 +28,14 @@ const Index = () => {
           onPress={() => dispatch(logout())}
           style={styles.loginBtn}>
           <View style={styles.loginGreenView}>
-            <Image
-              source={require('../../assets/images/logout.png')}
-              style={styles.loginImage}></Image>
+            <LogoutBtn />
           </View>
 
           <View style={styles.loginTextView}>
-            <Text style={styles.loginText}> Log out </Text>
-
-            <Image
-              source={require('../../assets/images/next.png')}
-              style={styles.nextimg}></Image>
+            <CustomText style={styles.loginText}> Log out </CustomText>
+            <View style={styles.center}>
+              <LogoutNext />
+            </View>
           </View>
         </TouchableOpacity>
       </View>

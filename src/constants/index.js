@@ -1,7 +1,4 @@
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
 export const colors = {
   black: '#000',
@@ -21,6 +18,7 @@ export const colors = {
   modalColor: '#1C1C1C',
   borderWhite: '#D0DBEA',
   parrot: '#BADA55',
+  red: 'red',
 };
 
 export const fontsSize = {

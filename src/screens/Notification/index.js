@@ -1,7 +1,8 @@
 import React from 'react';
-import {FlatList, Image, ScrollView, Text, View} from 'react-native';
+import {FlatList, Image, ScrollView, View} from 'react-native';
 import {styles} from './style';
 import image from '../../assets/images/male.png';
+import CustomText from '../../components/CustomText'
 const DATA = [
   {
     time: '2 hours ago',
@@ -69,7 +70,7 @@ const Index = () => {
   return (
     <ScrollView style={{flex: 1}}>
       <View style={styles.TopView}>
-        <Text style={styles.Text}> Notifications </Text>
+        <CustomText style={styles.Text}> Notifications </CustomText>
       </View>
 
       <FlatList
@@ -80,12 +81,12 @@ const Index = () => {
             <Image source={item.img} style={styles.userImg}></Image>
             <View>
               <View style={styles.textView}>
-                <Text style={styles.userName}>
-                  {item.name} <Text style={styles.userMsg}>{item.msg}</Text>
-                </Text>
+                <CustomText style={styles.userName}>
+                  {item.name} <CustomText style={styles.userMsg}>{item.msg}</CustomText>
+                </CustomText>
               </View>
               <View style={styles.scheduleView}>
-                <Text style={styles.scheduleText}>{item.time}</Text>
+                <CustomText style={styles.scheduleText}>{item.time}</CustomText>
               </View>
             </View>
           </View>

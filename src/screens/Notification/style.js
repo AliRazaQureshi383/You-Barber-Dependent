@@ -14,8 +14,8 @@ export const styles = {
   TopView: {
     backgroundColor: colors.white,
     padding: wp(10),
-    borderBottomLeftRadius: wp(10),
-    borderBottomRightRadius: wp(10),
+    borderBottomLeftRadius: wp(7),
+    borderBottomRightRadius: wp(7),
     elevation: wp(1),
   },
 
