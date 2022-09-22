@@ -11,6 +11,9 @@ export const styles = {
 
   inputIcon: {
     marginLeft: wp(5),
+    height: wp(5),
+    width: wp(5),
+   
   },
   error: {
     marginHorizontal: wp(5),
@@ -30,7 +33,6 @@ export const styles = {
     borderRadius: hp(5),
     width: wp(90),
     height: wp(15),
-
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: wp(0.5),
@@ -38,7 +40,7 @@ export const styles = {
   },
 
   TextInput: {
-    flex: 1,
+    
     marginLeft: wp(5),
   },
   forgetPass: {

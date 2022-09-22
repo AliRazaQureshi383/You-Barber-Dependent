@@ -18,6 +18,7 @@ import EmailSvg from '../../assets/icons/Mail.svg';
 import EyeOpenSvg from '../../assets/icons/Show.svg';
 import {useCreatePostMutation} from '../../services/api';
 import {login, token} from '../../redux/reducer/reducer';
+import CustomInput from '../../components/CustomInput';
 
 const schema = Yup.object({
   password: Yup.string()
@@ -89,32 +90,65 @@ export default function index(props) {
           }}>
           {props => (
             <View>
-              <View style={styles.inputView}>
-                <View style={styles.inputIcon}>
+              {/* <View style={styles.inputView}> */}
+              {/* <View style={styles.inputIcon}>
                   <EmailSvg />
-                </View>
+                </View> */}
 
-                <TextInput
+              {/* <TextInput
                   style={styles.TextInput}
                   placeholder="Email or phone number"
                   onChangeText={props.handleChange('email')}
-                  value={props.values.email}></TextInput>
-              </View>
+                  value={props.values.email}></TextInput> */}
+
+              <CustomInput
+                style={styles.TextInput}
+                placeholder="Email or phone number"
+                onChangeText={props.handleChange('email')}
+                value={props.values.email}
+                icon={<EmailSvg />}
+              />
+
+              {/* </View> */}
+
               <CustomText style={styles.error}>{props.errors.email}</CustomText>
 
-              <View style={styles.inputView}>
-                <View style={styles.inputIcon}>
+              {/* <View style={styles.inputView}> */}
+              {/* <View style={styles.inputIcon}>
                   <PasswordSvg />
-                </View>
+                </View> */}
 
-                <TextInput
+              {/* <TextInput
                   style={styles.TextInput}
                   placeholder="  Password"
                   secureTextEntry={visibility}
                   onChangeText={props.handleChange('password')}
                   value={props.values.password}
-                />
-                <TouchableOpacity onPress={() => showPass()}>
+                /> */}
+
+              <CustomInput
+                style={styles.TextInput}
+                placeholder="Password"
+                secureTextEntry={visibility}
+                onChangeText={props.handleChange('password')}
+                value={props.values.password}
+                icon={<PasswordSvg />}
+                icon2={
+                  <TouchableOpacity onPress={() => showPass()}>
+                    {visibility ? (
+                      <View style={styles.inputIconRight}>
+                        <EyeCloseSvg />
+                      </View>
+                    ) : (
+                      <View style={styles.inputIconRight}>
+                        <EyeOpenSvg />
+                      </View>
+                    )}
+                  </TouchableOpacity>
+                }
+              />
+
+              {/* <TouchableOpacity onPress={() => showPass()}>
                   {visibility ? (
                     <View style={styles.inputIconRight}>
                       <EyeCloseSvg />
@@ -124,8 +158,10 @@ export default function index(props) {
                       <EyeOpenSvg />
                     </View>
                   )}
-                </TouchableOpacity>
-              </View>
+                </TouchableOpacity> */}
+
+              {/* </View> */}
+
               <CustomText style={styles.error}>
                 {props.errors.password}
               </CustomText>
